@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addToScore(4)">4</button>
+<button onclick="addToScore(2)">2</button>
+<button onclick="addToScore(3)">3</button>
+<button onclick="updateMinMax()">ENTER</button>
+
+    <script>
+      // JavaScript कोड
+let score = ""; // स्कोर स्ट्रिंग को रिप्रेजेंट करता है
+let minScore = Infinity; // इनफिनिटी से शुरू होता है
+let maxScore = -Infinity; // नेगेटिव इनफिनिटी से शुरू होता है
+
+function addToScore(num) {
+    score += num;
+    document.getElementById("scoreBox").value = score;
+}
+
+function updateMinMax() {
+    let currentScore = parseInt(score);
+    if (currentScore < minScore) {
+        minScore = currentScore;
+        document.getElementById("minBox").value = minScore;
+    }
+    if (currentScore > maxScore) {
+        maxScore = currentScore;
+        document.getElementById("maxBox").value = maxScore;
+    }
+    score = ""; // स्कोर बॉक्स को खाली मान में रीसेट किया जाता है
+    document.getElementById("scoreBox").value = "";
+}
+</script>
+
+
+    
+</body>
+</html>

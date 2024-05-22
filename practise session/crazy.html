@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+    <div id="cont"></div>
+<script>
+
+    products=[
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+        
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+        {
+           "products":"Pen with combo box",
+           "price":4500,
+           "seller":"Shivam maurya"
+        },
+
+    ]
+
+let conatiner=document.getElementById("cont");
+
+products.map((ele)=>
+{
+    let cart=document.createElement("div");
+    let product=document.createElement("h2");
+    let price=document.createElement("p");
+    let seller=document.createElement("h4");
+
+    product.innerText=ele.product;
+    price.innerText=ele.price;
+    seller.innerText=ele.seller;
+
+    cart.append(product,price,seller)
+    conatiner.append(cart)
+})
+
+
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cont">
+
+    </div>
+</body>
+</html>
+
+<script>
+    let arr=[
+        "Heading-1",
+        "Heading-2",
+        "Heading-3",
+        "Heading-4",
+        "Heading-5",
+        "Heading-6"
+    ]
+
+    let conatiner=document.getElementById("cont")
+
+
+  arr.map((ele)=>{
+    let heading=document.createElement("h1");
+    heading.innerText=ele;
+    heading.style.backgroundColor="red";
+    heading.style.fontSize="45px"
+   conatiner.append(heading)
+  })
+</script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    
+    .bmi{
+        background-color: rgb(31, 240, 128);
+        width: 50%;
+        margin: auto;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .cl{
+        color:rgb(5, 5, 6)
+    }
+
+    .cl1{
+        color:white;
+        background-color: black;
+        width: 50%;
+        margin:auto;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    #img{
+        background-image:url(./shivam.jpeg.jpg);
+        width: 50%;
+        margin:auto;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+    .bmi1{
+        background-color: rgb(31, 240, 128);
+        width: 50%;
+        margin: auto;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    button{
+        height: 30px;
+        border-radius: 5px;
+        border:2px solid blue;
+    }
+</style>
+<body>
+    <h1 class="bmi" style="font-size: 50px;">Check your BMI</h1>
+    <h2 class="cl1">Enter your weight and height below to check your BMI results</h2>
+    <div id="img">
+        <h2 class="cl">Put your weight in here (KG)</h2>
+        <input type="text"  id="weight">
+        <h2 class="cl">And your height in here(CM)</h2>
+        <input type="text" id="height"><br><br>
+        <button onclick="print()">Calculate BMI</button><br><br>
+    </div>
+    <h2 id="view" class="bmi1">Your BMI is-: , which means Your are-: ,</h2>
+
+</body>
+</html>
+<script>
+    let weight=document.getElementById("weight");
+    let height=document.getElementById("height");
+    function print(){
+        let bmi=((weight.value)*1000)/((height.value*height.value)/10);
+        let call=document.getElementById("view");
+        if(bmi<=18.4){
+           
+            call.innerText="Your BMI is -:"+(bmi.toFixed(2))+" ,"+"which means Your are -: UnderWeight ]"
+        }else if(bmi >= 18.5 && bmi <= 24.9){
+            call.innerText="Your BMI is -:"+(bmi.toFixed(2))+" ,"+" which means Your are -: Normal Weight ]"
+        }else if(bmi >= 25 && bmi <= 29.9){
+            call.innerText="Your BMI is -:"+(bmi.toFixed(2))+" ,"+" which means Your are -: Over Weight ]"
+        }else if(bmi >= 30){
+            call.innerText="Your BMI is -:"+(bmi.toFixed(2))+" ,"+" which means Your are -: Obese Class ]"
+        }
+       
+    }
+//  let a=12.33333333333;
+//  console.log(a.toFixed(2))
+   
+    
+</script>

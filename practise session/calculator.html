@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><h1 id="display"></h1>
+    <div id="cont">
+        <button>0</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+    </div>
+
+    <div id="operator">
+       <button>+</button>
+       <button>-</button>
+       <button>*</button>
+       <button>/</button>
+       <button>%</button>
+    </div>
+
+    <button id="equal">=</button>
+
+</body>
+</html>
+<script>
+
+
+let button=document.querySelectorAll("#cont > button")
+let operator=document.querySelectorAll("#operator >button")
+let display=document.getElementById("display")
+let equalto=document.getElementById("equal");
+
+
+let isNumber=true;
+let firstNumer=""
+let secondNumer=""
+let operators="";
+
+
+
+equalto.addEventListener("click",function(){
+    display.innerText=calculate(firstNumer,secondNumer,operators);
+
+})
+
+for(let i=0; i<button.length; i++){
+    button[i].addEventListener("click",function(){
+        if(isNumber==true){
+            firstNumer+=button[i].innerText;
+            display.innerText=firstNumer;
+        }
+        else{
+            secondNumer+=button[i].innerText;
+            display.innerText=secondNumer;
+        }
+       
+    })
+}
+
+for(let i=0; i<operator.length; i++){
+    operator[i].addEventListener("click",function(){
+       isNumber=false;
+       operators=operator[i].innerText;
+    })
+}
+function calculate(firstNumer,secondNumer,operators){
+    switch(operators){
+        case "+":
+        return Number(firstNumer)+Number(secondNumer);
+        case "-":
+        return Number(firstNumer)-Number(secondNumer);
+        case "/":
+        return Number(firstNumer)/Number(secondNumer);
+        case "%":
+        return Number(firstNumer)%Number(secondNumer);
+        case "*":
+        return Number(firstNumer)*Number(secondNumer);
+        
+    }
+}
+
+
+
+</script>
